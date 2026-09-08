@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "price-sentinel-agent"
+version = "0.1.0"
+description = "An auditable enterprise agent for cross-channel price monitoring and breach case management."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "PriceSentinel contributors" }]
+dependencies = []
+
+[project.scripts]
+price-sentinel = "pricesentinel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
