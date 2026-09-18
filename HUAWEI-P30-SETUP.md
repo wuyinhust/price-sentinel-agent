@@ -81,7 +81,7 @@ adb shell input keyevent 0 && echo OK
 
 ---
 
-## 出问题查这里
+## 卡住了查这里
 
 | 现象 | 处理 |
 |---|---|
