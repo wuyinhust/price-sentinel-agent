@@ -1,0 +1,49 @@
+{
+  "monitor_id": "once-coffee-floor-watch",
+  "currency": "CNY",
+  "notes": "PROBE CONFIG. Products, titles and channels are real (observed live on JD). floor_price values are PLACEHOLDERS pending confirmation -- replace them with the real policy before treating any verdict as a business signal.",
+
+  "products": [
+    {
+      "product_id": "once-latte",
+      "brand": "吉饮",
+      "name": "@once 冷萃浓缩咖啡液 / 拿铁",
+      "sku": null,
+      "units_per_pack": 1
+    }
+  ],
+
+  "policies": [
+    {
+      "product_id": "once-latte",
+      "package_type": "bundle",
+      "floor_price": 79.0,
+      "effective_from": "2026-09-01",
+      "channel_scope": "*"
+    },
+    {
+      "product_id": "once-latte",
+      "package_type": "single",
+      "floor_price": 29.0,
+      "effective_from": "2026-09-01",
+      "channel_scope": "*"
+    }
+  ],
+
+  "targets": [
+    {
+      "product_id": "once-latte",
+      "package_type": "bundle",
+      "channel": "jd",
+      "keyword": "吉饮 once 浓缩拿铁",
+      "match_all": ["once"],
+      "match_any": ["吉饮", "拿铁", "浓缩"],
+      "package_types": {
+        "bundle": ["3盒", "5盒", "18支"],
+        "single": ["1盒", "6支"]
+      },
+      "merchant": "京东",
+      "max_listings": 8
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "monitor_id": "jinyin-joyinbag-watch",
+  "currency": "CNY",
+  "notes": "真实目标。products 与 targets 均为用户指定的商品与渠道。policies 暂为空 —— 这不是遗漏，而是基线模式：先采一轮真实报价，据此再定每个包装的最低限价，避免用拍脑袋的 floor 刷出假案件。渠道可信度不同：京东走无障碍树(精确)，淘宝走截图+OCR(线索级，价格可能被误识)。",
+
+  "products": [
+    {
+      "product_id": "jinyin-americano",
+      "brand": "吉饮",
+      "name": "吉饮咖啡美式鲜萃咖啡",
+      "sku": null,
+      "units_per_pack": 1
+    },
+    {
+      "product_id": "joyinbag-b8",
+      "brand": "JOYINBAG 兜饮",
+      "name": "JOYINBAG B8冷萃美式",
+      "sku": null,
+      "units_per_pack": 1
+    }
+  ],
+
+  "policies": [],
+
+  "targets": [
+    {
+      "product_id": "jinyin-americano",
+      "package_type": "single",
+      "channel": "jd",
+      "keyword": "吉饮咖啡美式鲜萃咖啡",
+      "match_all": ["吉饮"],
+      "match_any": ["美式", "鲜萃", "浓缩", "冷萃", "拿铁"],
+      "max_listings": 10
+    },
+    {
+      "product_id": "joyinbag-b8",
+      "package_type": "single",
+      "channel": "jd",
+      "keyword": "JOYINBAG B8冷萃美式",
+      "match_all": ["b8"],
+      "match_any": ["冷萃", "美式", "氮气", "兜饮", "joyinbag"],
+      "max_listings": 10
+    },
+
+    {
+      "product_id": "jinyin-americano",
+      "package_type": "single",
+      "channel": "taobao",
+      "keyword": "吉饮咖啡美式鲜萃咖啡",
+      "comment": "lookup 是真正打进搜索框的东西：adb 送不了中文，所以打拼音 jiyin，再由联想词列表补成「吉饮咖啡」。OCR 读回来的标题比无障碍树脏，因此放宽到只要求命中品牌词。",
+      "lookup": "jiyin",
+      "match_all": [],
+      "match_any": ["吉饮", "once"],
+      "max_listings": 10
+    },
+    {
+      "product_id": "joyinbag-b8",
+      "package_type": "single",
+      "channel": "taobao",
+      "keyword": "JOYINBAG B8冷萃美式",
+      "lookup": "joyinbag",
+      "match_all": [],
+      "match_any": ["joyinbag", "兜饮", "b8"],
+      "max_listings": 10
+    }
+  ]
+}

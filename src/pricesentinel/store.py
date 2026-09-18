@@ -20,6 +20,21 @@ class SQLiteStore:
         self.connection.execute("PRAGMA foreign_keys = ON")
         self.init_schema()
 
+    def close(self) -> None:
+        """Release the underlying connection.
+
+        sqlite3 does not close connections when they are garbage collected, so
+        callers that build many stores (tests, batch jobs) should close
+        explicitly or wrap the store in a ``with`` block.
+        """
+        self.connection.close()
+
+    def __enter__(self) -> SQLiteStore:
+        return self
+
+    def __exit__(self, *_exc: object) -> None:
+        self.close()
+
     def init_schema(self) -> None:
         self.connection.executescript(
             """

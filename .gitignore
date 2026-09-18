@@ -9,3 +9,8 @@ build/
 *.sqlite3
 *.db
 .DS_Store
+
+# The OCR helper is compiled from tools/ocr/ocr.m by tools/ocr/build.sh, and the
+# SDK it has to be built against is machine-specific. Ship the source, not the
+# binary: ocr.py builds it on first use.
+tools/ocr/ocr

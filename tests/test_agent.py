@@ -8,6 +8,7 @@ from pricesentinel.store import SQLiteStore
 class AgentTests(unittest.TestCase):
     def test_repeated_breach_updates_one_open_case(self):
         store = SQLiteStore()
+        self.addCleanup(store.close)
         store.upsert_product(Product("p-1", "Demo", "Demo product"))
         store.upsert_policy(PricePolicy("p-1", "single", 100, "2026-01-01"))
         agent = PriceSentinelAgent(store)

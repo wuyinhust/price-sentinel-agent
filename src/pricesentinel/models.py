@@ -76,7 +76,10 @@ class BreachResult:
     effective_price: float | None
     floor_price: float | None
     delta: float | None
-    delta_pct: float | None
+    # A ratio, not a percentage: -0.0785 means 7.85% below the floor. The
+    # severity thresholds in rules.py use the same unit. Format with *100 for
+    # display; reading it as a percentage silently reports 0.08% instead of 7.85%.
+    delta_ratio: float | None
     reason: str
 
     @property

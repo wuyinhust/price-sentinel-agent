@@ -1,0 +1,18 @@
+{
+  "products": [
+    {"product_id": "p-1", "brand": "Demo", "name": "Demo single bottle", "sku": "SKU-1", "unit_volume_ml": 750},
+    {"product_id": "p-2", "brand": "Demo", "name": "Demo gift box", "sku": "SKU-2", "units_per_pack": 2}
+  ],
+  "policies": [
+    {"product_id": "p-1", "package_type": "single", "floor_price": 100, "effective_from": "2026-01-01", "channel_scope": "*"},
+    {"product_id": "p-2", "package_type": "bundle", "floor_price": 500, "effective_from": "2026-01-01", "channel_scope": "*"}
+  ],
+  "observations": [
+    {"observation_id": "obs-1", "product_id": "p-1", "package_type": "single", "channel": "marketplace-a", "merchant": "shop-1", "observed_at": "2026-09-08T00:00:00+00:00", "listed_price": 110, "net_price": 90, "listing_url": "https://example.com/item/1"},
+    {"observation_id": "obs-2", "product_id": "p-1", "package_type": "single", "channel": "marketplace-a", "merchant": "shop-1", "observed_at": "2026-09-09T00:00:00+00:00", "listed_price": 110, "net_price": 88, "listing_url": "https://example.com/item/1"},
+    {"observation_id": "obs-3", "product_id": "p-1", "package_type": "single", "channel": "marketplace-b", "merchant": "shop-2", "observed_at": "2026-09-09T00:00:00+00:00", "listed_price": 100, "listing_url": "https://example.com/item/3"},
+    {"observation_id": "obs-4", "product_id": "p-1", "package_type": "single", "channel": "marketplace-b", "merchant": "shop-3", "observed_at": "2026-09-09T00:00:00+00:00", "listed_price": 120, "net_price": 75, "listing_url": "https://example.com/item/4"},
+    {"observation_id": "obs-5", "product_id": "p-2", "package_type": "bundle", "channel": "marketplace-c", "merchant": "shop-4", "observed_at": "2026-09-09T00:00:00+00:00", "listed_price": 380, "listing_url": "https://example.com/item/5"},
+    {"observation_id": "obs-6", "product_id": "p-1", "package_type": "single", "channel": "marketplace-d", "merchant": "shop-5", "observed_at": "2026-09-09T00:00:00+00:00", "listed_price": 80, "currency": "USD", "listing_url": "https://example.com/item/6"}
+  ]
+}
