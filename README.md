@@ -11,6 +11,7 @@ Two pieces that work together, plus the device-side checklist they both depend o
 | `android-harness/` | A standalone Android control harness — adb for the agent, scrcpy for the human. The collector **reuses its findings but does not import it**; the two are siblings, not layers. See `android-harness/README.md`. |
 | `monitors/` | Monitor configs: the master data, floor policies and searches that define one watch. |
 | `HUAWEI-P30-SETUP.md` | Device-side setup checklist for driving a **Huawei P30** (开发者选项 / USB 调试 / HDB / 纯净模式, plus probe commands). 中文. |
+| `lafei-watch/` | 实战实例：拉菲旗舰店京东价格采集与破价监控（中文）。含[双平台使用指南](lafei-watch/docs/使用指南-iPhone与安卓.md)（iPhone 用 zhongerxin/iPhone-use）与[京东风控避坑指南](lafei-watch/docs/京东风控避坑指南.md)。 |
 
 The harness is kept separate on purpose. It is a general-purpose way to see and
 touch any Android device; the collector is one consumer of it. Merging them into

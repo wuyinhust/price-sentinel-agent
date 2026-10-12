@@ -1,0 +1,16 @@
+# 运行产物与数据（不入库）
+data/
+evidence/
+logs/
+state/
+exports/
+backup/
+payloads/
+# Python
+*.pyc
+__pycache__/
+.venv/
+# 系统
+.DS_Store
+# 工作区元数据
+.workbuddy/

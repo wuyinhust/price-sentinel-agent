@@ -14,3 +14,13 @@ build/
 # SDK it has to be built against is machine-specific. Ship the source, not the
 # binary: ocr.py builds it on first use.
 tools/ocr/ocr
+
+# lafei-watch 工作区运行产物（本机数据，不入库）
+backup/
+data/
+evidence/
+exports/
+logs/
+payloads/
+state/
+.workbuddy/

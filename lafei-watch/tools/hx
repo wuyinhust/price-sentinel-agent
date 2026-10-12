@@ -1,0 +1,8 @@
+#!/bin/sh
+# 价格哨兵 · android-harness 包装器
+# 用法: tools/hx <doctor|state|tree|labels|tap|tap-text|key|text|shot|open|run ...>
+# 作用: 固定 adb(PATH) 与 harness 工作目录，避免每次重复导出环境。
+HARNESS_DIR="/Volumes/正式素材文件/海外测试VVV/price-sentinel-agent-wuyinhust/android-harness"
+export PATH="/Applications/Escrcpy.app/Contents/Resources/extra/mac-arm64/scrcpy:$PATH"
+cd "$HARNESS_DIR" || exit 1
+exec .venv/bin/android-harness "$@"
