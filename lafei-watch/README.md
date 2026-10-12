@@ -32,10 +32,10 @@ lafei-watch/
 │   ├── make_spec.py        # 生成采集规格（关键词阶梯/必需词/排除词）
 │   └── run_collect.sh      # 采集启动包装
 ├── docs/
-│   ├── 监控计划-0920.md        # 数据边界、四要素、验收标准
-│   ├── 使用指南-iPhone与安卓.md  # 双平台用法 + 报错 recipe（A1–A19 / I1–I10）
-│   ├── 京东风控避坑指南.md      # 三级升级模型 + 行为指纹 + 熔断实现
-│   └── 风控复盘-0921.md        # 2026-09-21 凌晨实战复盘（铁证与代价账）
+│   ├── 监控计划-0920.md        # 数据边界、数据结构、规则、采集规范、验收标准
+│   ├── 使用指南-iPhone与安卓.md  # 双平台用法 + 报错 recipe（I1–I10 / A1–A20）
+│   ├── 京东风控避坑指南.md      # 避坑前提（iPhone 优先/模拟真人/熔断纪律）+ 三级模型 + 参数
+│   └── 风控复盘-0921.md        # 2026-09-21 风控事件记录（时间线、触发因素、修复状态）
 └── seed/seed_0907.csv      # 商品清单种子（任务输入）
 ```
 
@@ -56,7 +56,7 @@ python3 tools/make_spec.py
 bash tools/run_collect.sh
 ```
 
-双平台采集的完整用法与报错 recipe 见 **[docs/使用指南-iPhone与安卓.md](docs/使用指南-iPhone与安卓.md)**；
-**iPhone 侧统一使用 [zhongerxin/iPhone-use](https://github.com/zhongerxin/iPhone-use)**，本目录不维护 iOS 实现。
+双平台采集的完整用法与报错 recipe 见 **[docs/使用指南-iPhone与安卓.md](docs/使用指南-iPhone与安卓.md)**。
+**平台首选 iPhone**（风控强度低于安卓），统一使用 [zhongerxin/iPhone-use](https://github.com/zhongerxin/iPhone-use)，本目录不维护 iOS 实现。
 
-风控是这条链路上最贵的失败模式，开跑前必读 **[docs/京东风控避坑指南.md](docs/京东风控避坑指南.md)**。
+风控是这条链路上最贵的失败模式，开跑前必读 **[docs/京东风控避坑指南.md](docs/京东风控避坑指南.md)**（避坑前提：iPhone 优先；安卓必须模拟真人；首次弹风控即停采、杀进程、不登录、通知用户）。
